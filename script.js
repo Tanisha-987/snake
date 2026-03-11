@@ -18,12 +18,12 @@ const highScoreElement = document.querySelector("#high-score")
 const scoreElement = document.querySelector("#score")
 const timeElement = document.querySelector("#time")
 
+const blockWidth = 30;
+const blockheight = 30;
 
 const cols =Math.floor(board.clientWidth / blockWidth);
 const rows =Math.floor(board.clientHeight / blockWidth);
 
-const blockWidth = 30;
-const blockheight = 30;
 
 let food = {x:Math.floor(Math.random() * rows) , y:Math.floor(Math.random() * cols)};
 
