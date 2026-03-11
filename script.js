@@ -218,3 +218,38 @@ addEventListener("keydown",(event)=>{
         direction = "down"
     }
 })
+
+
+
+let startX = 0;
+let startY = 0;
+
+
+board.addEventListener("touchstart",(e)=>{
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+})
+
+board.addEventListener("touchend",(e)=>{
+    
+    let endX = e.changedTouches[0].clientX;
+    let endY = e.changedTouches[0].clientY;
+
+    let diffX = endX - startX;
+    let diffY = endY - startY;
+
+    if(Math.abs(diffX) > Math.abs(diffY)){
+        if(diffX > 0){
+            direction = "right"
+        }else{
+            direction = "left"
+        }
+    }else{
+        if(diffY > 0){
+            direction = "down"
+        }else{
+            direction = "up"
+        }
+    }
+
+})
